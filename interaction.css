@@ -1,0 +1,97 @@
+.--hidden{
+    opacity: 0;
+    transform: translateY(10rem);
+}
+.none{
+    display: none;
+}
+
+/* Header */
+.nav__links{
+  transition: transform 1s ease-in-out;
+}
+.upstroke{
+  transform: translateY(-3px);
+}
+#menu-bar{
+  font-size: 16px;
+border: none;
+background: transparent;
+display: none;
+}
+.hamburger{
+  /* display: none; */
+  position: fixed;
+  top: 16px;
+  right: 46px; 
+  cursor: pointer;
+}
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom{
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: #fff;
+  width: 26px;
+  height: 3px;
+  transition: transform 0.3s ease;
+}
+.hamburger-middle{
+  transform: translateY(7px);
+}
+.hamburger-bottom{
+  transform: translateY(14px);
+}
+.open{
+  transform: rotate(90deg);
+  transform: translateY(0);
+}
+.open .hamburger-top{
+  transform: rotate(45deg) translateY(6px) translate(6px);
+}
+.open .hamburger-bottom{
+  transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
+.open .hamburger-middle{
+  opacity: 0;
+}
+
+
+
+@keyframes slideInLeft{
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+@keyframes slideInRight{
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+@media(max-width:767px) {   
+    #menu-bar{
+        display: block;
+    }
+}
+@media(max-width:576px){
+      
+  .slider__btn {
+    /* height: 3rem; */
+    height: 1.5rem;
+    /* width: 3rem; */
+    width: 1.5rem;
+    /* font-size: 1.5rem; */
+    font-size: 1rem;
+    cursor: pointer;
+  }
+    .fa-brands, .fa-arrow-up{
+        font-size: 1.2em;
+    }
+}
