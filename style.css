@@ -1,0 +1,255 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Serif+Text:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+:root{
+    --text-color:#000000;
+    --accent:#A94B00;
+    --accent-hover:#D15D00;
+    --background:#F9EFE7;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.bg-b{
+    background-color: var(--background);
+}
+.color-a{
+    color: var(--accent)
+}
+.color-b{
+    color: var(--background)
+}
+.text-color{
+    color: var(--text-color);
+}
+a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+img{
+    width: 100%;
+    height: auto;
+}
+body{
+    font-family: "Rubik",sans-serif;
+    background:#FFFBF8 ;
+}
+/* Hero section */
+.section-hero{
+    padding: 24px;
+}
+.hero{
+    overflow: hidden;
+    padding: 0 116px;
+    border-radius: 8px;
+    background-color: var(--background);
+}
+
+.hero-wrap{
+    padding: 32px 0 120px;
+}
+
+.nav-link{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.nav-link:hover{
+    color: #666666;
+}
+.s-icon{
+ transition: transform .5s ease-in-out;
+}
+.nav-link:hover .s-icon{
+    transform: rotate(360deg);
+}
+.showcase-text{
+    animation: slideInFromLeft 1s ease-in;
+}
+.showcase-image{
+   animation: slideInFromRight 1s ease-in;
+   margin-top: 16px;
+}
+.image-container{
+    max-width: 300px;
+}
+
+/*  Portfolio section */
+.portfolio-link{
+    border-radius: 16px;
+    overflow: hidden;
+}
+.portfolio-image{
+cursor: pointer;
+height: 440px;
+object-position: left top;
+object-fit: cover;
+transition: transform .5s ease-in-out;
+}
+.portfolio-image:hover{
+    transform: scale(1.05);
+}
+.skill{
+    border-radius:4px;
+    padding: 4px 8px;
+    background-color: var(--background);
+}
+.arrows{
+    display: flex;
+    gap: 16px;
+    justify-content: right;
+}
+.arrow{
+    padding: 14px 16px;
+}
+.left-arrow,.right-arrow{
+    background-color: var(--background);
+    border-radius: 50%;
+    border: 1px solid white;
+}
+.left-arrow{
+background-color: var(--background);
+}
+.right-arrow{
+    background-color: var();
+}
+.right-arrow > img{
+    transform: rotate(180deg);
+}
+.left-arrow:hover, .right-arrow:hover{
+    background-color: #ff9946;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/* SLIDER */
+.slider {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  height: 45em;
+  /* IN THE END */
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 50%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* THIS creates the animation! */
+  transition: transform 1s;
+}
+.column{
+    margin-right: 32px;
+    width:100%;
+    position: relative;
+}
+
+/* Services section */
+.services{
+    background:linear-gradient(rgb(240, 240, 240), var(--background));
+}
+
+
+/* Animations */
+@keyframes slideInFromLeft {
+    0%{
+        transform: translateX(-100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    0%{
+        transform: translateX(100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@media(max-width:992px){
+/* Hero section */
+.section-hero{
+    padding: 24px;
+}
+.hero{
+    overflow: hidden;
+    padding: 0 92px;
+    border-radius: 8px;
+    background-color: var(--background);
+}
+
+.hero-wrap{
+    padding: 32px 0 120px;
+}
+.navbar{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+    }
+.slide{
+    width: 100%;
+}
+}
+
+@media(max-width:768px){
+/* Hero section */
+.section-hero{
+    padding: 24px;
+}
+.hero{
+    overflow: hidden;
+    padding: 0 80px;
+    border-radius: 8px;
+    background-color: var(--background);
+}
+
+.hero-wrap{
+    padding: 32px 0 120px;
+}
+
+}
+@media(max-width:576px){
+    /* Hero section */
+.section-hero{
+    padding: 16px;
+}
+.hero{
+    overflow: hidden;
+    padding: 0 48px;
+    border-radius: 8px;
+    background-color: var(--background);
+}
+
+.hero-wrap{
+    padding: 32px 0 120px;
+}
+.image-container{
+   transform: translate(-8px,-8px);
+   transition: 0.2s;
+}
+.portfolio-link{
+    border-radius: 16px;
+    overflow: hidden;
+}
+.portfolio-image{
+cursor: pointer;
+height: 360px;
+}
+
+/* SLIDER */
+.slider {
+  height: 34em;
+}
+
+}
