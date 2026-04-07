@@ -1,0 +1,26 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/Evelyn",
+      "destination": "/Evelyn.html"
+    },{
+      "source": "/Gabriella-Bilingual-School",
+      "destination": "/Gabriella-Bilingual-School.html"
+    },{
+      "source": "/Kishis-restaurant",
+      "destination": "/Kishis-restaurant.html"
+    }
+    ,{
+      "source": "/Mike-Brighton",
+      "destination": "/Mike-Brighton.html"
+    }
+    ,{
+      "source": "/International-Nursery-School",
+      "destination": "/International-Nursery-School.html"
+    }
+  ]
+}
