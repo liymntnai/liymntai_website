@@ -10,6 +10,7 @@ const nextBtn = document.querySelector('.next');
 
 const openModal = function () {
   modalContainer.classList.toggle('active');
+  // overlay.classList.toggle('none')
   // overlay.classList.toggle('hidden');
   // prevBtn.classList.toggle('hidden')
   // nextBtn.classList.toggle('hidden')
@@ -27,12 +28,12 @@ overlay.addEventListener('click', openModal);
 // Header Carousel slides
 
 const carousels = document.querySelectorAll('.carousel');
-const viewTexts = document.querySelectorAll('.view-text')
+const viewText = document.querySelector('.view-text')
 
 let curSlide = 0;
+let views = ['Desktop View', 'Tablet View', 'Mobile View']
 const showSlide = function(n){
   carousels[curSlide].classList.toggle('active');
-  viewTexts[curSlide].classList.toggle('active');
   curSlide+=n
   if(curSlide<0)
    curSlide=carousels.length-1;
@@ -40,7 +41,7 @@ const showSlide = function(n){
     curSlide=0;
 
   carousels[curSlide].classList.toggle('active');
-  viewTexts[curSlide].classList.toggle('active');
+  viewText.textContent = views[curSlide]
 
 }
 const forwardSlide = function(){
