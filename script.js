@@ -34,53 +34,6 @@ allSections.forEach(function (section) {
 
 
 ///////////////////////////////////////
-// Routing
-const routes = {
-    "/": "index.html",
-    "/Mike-Brighton": "/pages/Mike-Brighton.html",
-    "/Kishis-restaurant": "/pages/Kishis-Restaurant.html",
-    "/International-Nursery-School": "/pages/International-Nursery-School.html",
-    "/Gabriella-Bilingual-School": "/pages/Gabriella-Bilingual-School.html",
-    "/Evelyn": "/pages/Evelyn.html"
-};
-
-const router = async () => {
-    const path = window.location.pathname;
-    const resource = routes[path] || "/404.html";
-
-    // 1. Fetch the external HTML file
-    try {
-        const response = await fetch(resource);
-        
-        if (!response.ok) throw new Error("Page not found");
-        
-        // 2. Convert the response to text
-        const html = await response.text();
-
-        // 3. Inject it into the page
-        document.getElementById("app").innerHTML = html;
-    } catch (error) {
-        document.getElementById("app").innerHTML = "<h1>Error loading page</h1>";
-    }
-};
-
-// Standard navigation handling
-const navigateTo = (url) => {
-    window.history.pushState(null, null, url);
-    router();
-};
-
-document.body.addEventListener("click", e => {
-    if (e.target.matches("[data-link]")) {
-        e.preventDefault();
-        navigateTo(e.target.getAttribute("href"));
-    }
-});
-
-window.addEventListener("popstate", router);
-router();
-
-///////////////////////////////////////
 // Slider
 const slider = function () {
   const slides = document.querySelectorAll('.slide');
