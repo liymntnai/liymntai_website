@@ -41,6 +41,31 @@ const PROJECTS = {
     },
     liveSite: null,
   },
+  evelyn: {
+    pageTitle: "Evelyn Beauty Care",
+    heading: "Evelyn Beauty Care",
+    description:
+      "Website for a beauty products business. Experience beauty that goes beyond the surface.",
+    galleryImage: "img/Header Evelyn.jpg",
+    modal: {
+      desktop: "img/Evelyn-Desktop.jpg",
+      tablet: "img/Evelyn-Tablet.jpg",
+      mobile: "img/Evelyn-Mobile.jpg",
+    },
+    liveSite: null,
+  },
+  "elizy-queens": {
+    pageTitle: "Elizy Queens",
+    heading: "Elizy Queens",
+    description: "Website for the sale of traditional gowns, chains and beed.",
+    galleryImage: "img/Elizy-Slice.jpg",
+    modal: {
+      desktop: "img/Elizy-Desktop1.jpg",
+      tablet: "img/Elizy-Tablet.jpg",
+      mobile: "img/Elizy-Mobile.jpg",
+    },
+    liveSite: null,
+  },
   "gabriella-bilingual-school": {
     pageTitle: "Gabriella Bilingual School",
     heading: "Gabriella Bilingual School",
