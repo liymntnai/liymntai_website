@@ -1,7 +1,32 @@
 
+(function () {
 const btnScrollTo = document.querySelector('#btn--scroll-to');
 const section1 = document.querySelector('#section--1');
+// title, desc, [modal images], preview images
+const projects = [
+  {elizy_queens:
+    {title: "Elizy Queens",
+     description: " Website for the sale of traditional gowns, chains and beed.",
+     modal_image: ["img/Elizy-Desktop1.jpg", "img/Elizy-Tablet.jpg", "img/Elizy-Mobile.jpg"],
+     preview_image: "img/Elizy-Slice.jpg"
+    }
+   },
+   {elizy_queens:
+    {title: "Elizy Queens",
+     description: " Website for the sale of traditional gowns, chains and beed.",
+     modal_image: ["img/Elizy-Desktop1.jpg", "img/Elizy-Tablet.jpg", "img/Elizy-Mobile.jpg"],
+     preview_image: "img/Elizy-Slice.jpg"
+    }
+   },
+   {elizy_queens:
+    {title: "Elizy Queens",
+     description: " Website for the sale of traditional gowns, chains and beed.",
+     modal_image: ["img/Elizy-Desktop1.jpg", "img/Elizy-Tablet.jpg", "img/Elizy-Mobile.jpg"],
+     preview_image: "img/Elizy-Slice.jpg"
+    }
+   }
 
+]
 
 ///////////////////////////////////////
 // Button scrolling
@@ -34,49 +59,27 @@ allSections.forEach(function (section) {
 
 
 ///////////////////////////////////////
-// Slider
+// Slider (native scroll-snap strip — swipeable by touch out of the box)
 const slider = function () {
+  const sliderEl = document.querySelector('.slider');
   const slides = document.querySelectorAll('.slide');
   const btnLeft = document.querySelector('.slider__btn--left');
   const btnRight = document.querySelector('.slider__btn--right');
 
-  let curSlide = 0;
-  const maxSlide = slides.length;
+  if (!sliderEl || !slides.length) return;
 
-  // Functions
-  const goToSlide = function (slide) {
-    slides.forEach(
-      (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
-    );
+  const scrollByOneSlide = function (direction) {
+    const gap = parseFloat(getComputedStyle(sliderEl).columnGap) || 0;
+    const distance = slides[0].getBoundingClientRect().width + gap;
+    sliderEl.scrollBy({ left: direction * distance, behavior: 'smooth' });
   };
 
-  // Next slide
-  const nextSlide = function () {
-    if (curSlide === maxSlide - 1) {
-      curSlide = 0;
-    } else {
-      curSlide++;
-    }
-    goToSlide(curSlide);
-  };
-
-  const prevSlide = function () {
-    if (curSlide === 0) {
-      curSlide = maxSlide - 1;
-    } else {
-      curSlide--;
-    }
-    goToSlide(curSlide);
-  };
-
-  const init = function () {
-    goToSlide(0);
-  };
-  init();
+  const nextSlide = () => scrollByOneSlide(1);
+  const prevSlide = () => scrollByOneSlide(-1);
 
   // Event handlers
-  btnRight.addEventListener('click', nextSlide);
-  btnLeft.addEventListener('click', prevSlide);
+  if (btnRight) btnRight.addEventListener('click', nextSlide);
+  if (btnLeft) btnLeft.addEventListener('click', prevSlide);
 
   document.addEventListener('keydown', function (e) {
     if (e.key === 'ArrowLeft') prevSlide();
@@ -84,3 +87,4 @@ const slider = function () {
   });
 };
 slider();
+})();

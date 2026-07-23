@@ -338,9 +338,13 @@ line-height: 180%;
 .p-small{
   font-size: 13px;
   line-height: 180%;
+  font-weight: 600;
 }
 .text-center{
     text-align: center;
+}
+.bold{
+  font-weight: 600;
 }
 
 .icon{

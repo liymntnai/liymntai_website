@@ -3,52 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kishi's Restaurant</title>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <title>Project</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="utilities.css" />
     <link rel="stylesheet" href="showcase.css" />
-
-    <!-- <script defer -->
-    <!-- type="text/javascript" -->
-    <!-- src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"> -->
-    <!-- </script> -->
   </head>
   <body>
     <div class="modal-container">
       <div class="modal">
-          <div class="content-4">
-            <div class="flex gap-2 align-center">
-              <button class="prev">
-                <img src="img/Arrow-left-accent.svg" alt="" />
-              </button>
-              
-                <div class="img carousel active">
-                  <img src="img/Restaurant-Desktop.jpg" alt="" />
-                </div>
-                
-                <div class="img carousel">
-                  <img src="img/Restaurant-Tablet.jpg" alt="" />
-                </div>
-               
-                <div class="img carousel">
-                  <img src="img/Resrarant-Mobile.jpg" alt="" />
-                </div>
+        <div class="content-4">
+          <div class="carousel-container">
+            <button class="prev">
+              <img src="img/Arrow-left-accent.svg" alt="" />
+            </button>
+            <button class="next">
+              <img src="img/Arrow-left-accent.svg" alt="" />
+            </button>
+            <button class="close-modal">&times;</button>
 
-              <button class="next">
-                <img src="img/Arrow-left-accent.svg" alt="" />
-              </button>
+            <div class="img carousel active">
+              <img id="modal-img-desktop" src="" alt="" />
             </div>
 
-            <h4 class="view-text">Desktop View</h4>
+            <div class="img carousel">
+              <img id="modal-img-tablet" src="" alt="" />
+            </div>
+
+            <div class="img carousel">
+              <img id="modal-img-mobile" src="" alt="" />
+            </div>
           </div>
-      
+
+          <h4 class="view-text">Desktop View</h4>
+        </div>
       </div>
-    <div class="overlay">
-        <button class="close-modal">&times;</button>
-      </div>
-    </div> 
-    
+      <div class="overlay"></div>
+    </div>
 
     <div class="section-hero">
       <div class="hero drop-shadow">
@@ -66,10 +56,7 @@
                   </a>
                   <a class="nav-link" href="tel:(+237)670061463">
                     <div class="s-icon">
-                      <img
-                        src="img/Phone in talk watchface indicator.svg"
-                        alt=""
-                      />
+                      <img src="img/Phone in talk watchface indicator.svg" alt="" />
                     </div>
                     <p class="p-medium">(+237) 670061463</p>
                   </a>
@@ -79,13 +66,10 @@
                 <div class="content-3 text-center">
                   <div class="content-5">
                     <h5 class="h5-spaced">PROJECT SHOWCASE</h5>
-                    <h1>Kishi's Restaurant</h1>
+                    <h1 id="project-heading">Project</h1>
                   </div>
 
-                  <h5 class="text-color description">
-                    Website for a restaurant business. School. Connect with
-                    clients to view your meals and book appointments.
-                  </h5>
+                  <h5 class="text-color description" id="project-description"></h5>
                 </div>
               </div>
             </div>
@@ -99,12 +83,22 @@
       <div class="container">
         <div class="content-1 center">
           <div class="card-image project-image show-modal">
-            <img src="img/Restaurant-Desktop-Img.jpg" alt="" />
+            <img id="project-gallery-image" src="" alt="" />
           </div>
           <div class="views">
             <button class="btn-view active show-modal">
               <h5>View Project</h5>
             </button>
+            <a
+              class="live-site flex gap-0 center"
+              id="project-live-site"
+              href="#"
+              target="_blank"
+              style="display: none"
+            >
+              <p class="h5-medium">View live site</p>
+              <img class="s-icon" src="img/Arrow-left-accent.svg" alt="" />
+            </a>
           </div>
         </div>
       </div>
@@ -135,10 +129,7 @@
               <div class="content-3">
                 <div class="flex gap-1">
                   <div class="s-icon">
-                    <img
-                      src="img/Phone in talk watchface indicator.svg"
-                      alt=""
-                    />
+                    <img src="img/Phone in talk watchface indicator.svg" alt="" />
                   </div>
                   <h5 class="h5-medium">Phone</h5>
                 </div>
@@ -165,6 +156,8 @@
       </div>
     </section>
 
+    <script src="router.js"></script>
+    <script src="project.js"></script>
     <script src="showcase.js"></script>
   </body>
 </html>

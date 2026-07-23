@@ -1,5 +1,6 @@
+(function () {
 ///////////////////////////////////////
-// Modal 
+// Modal
 const modalContainer = document.querySelector('.modal-container');
 const body = document.querySelector('body')
 const overlay = document.querySelector('.overlay');
@@ -22,6 +23,7 @@ btnsOpenModal.forEach(function (btn) {
 })
 
 overlay.addEventListener('click', openModal);
+if (btnCloseModal) btnCloseModal.addEventListener('click', openModal);
 
 
 ///////////////////////////////////////
@@ -54,3 +56,45 @@ showSlide(-1)
 
 prevBtn.addEventListener('click', backwardSlide)
 nextBtn.addEventListener('click', forwardSlide)
+
+///////////////////////////////////////
+// Swipe through carousel slides (touch/pointer)
+const swipeArea = document.querySelector('.modal .content-4 > div:first-child');
+const SWIPE_THRESHOLD = 40;
+let swipeStartX = 0;
+let swipeStartY = 0;
+let isSwiping = false;
+let swipeHandled = false;
+
+if (swipeArea) {
+  swipeArea.style.touchAction = 'pan-y';
+
+  swipeArea.addEventListener('pointerdown', function (e) {
+    swipeStartX = e.clientX;
+    swipeStartY = e.clientY;
+    isSwiping = true;
+    swipeHandled = false;
+  });
+
+  swipeArea.addEventListener('pointermove', function (e) {
+    if (!isSwiping || swipeHandled) return;
+
+    const deltaX = e.clientX - swipeStartX;
+    const deltaY = e.clientY - swipeStartY;
+
+    if (Math.abs(deltaX) < SWIPE_THRESHOLD || Math.abs(deltaX) < Math.abs(deltaY)) return;
+
+    swipeHandled = true;
+    deltaX < 0 ? forwardSlide() : backwardSlide();
+  });
+
+  const endSwipe = function () {
+    isSwiping = false;
+    swipeHandled = false;
+  };
+
+  swipeArea.addEventListener('pointerup', endSwipe);
+  swipeArea.addEventListener('pointercancel', endSwipe);
+  swipeArea.addEventListener('pointerleave', endSwipe);
+}
+})();

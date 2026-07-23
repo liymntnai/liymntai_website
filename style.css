@@ -132,20 +132,27 @@ background-color: var(--background);
   width: 100%;
   margin: 0 auto;
   position: relative;
-  height: 45em;
-  /* IN THE END */
-  overflow: hidden;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 4px;
+}
+.slider::-webkit-scrollbar {
+  display: none;
 }
 
 .slide {
-  position: absolute;
-  width: 50%;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* THIS creates the animation! */
-  transition: transform 1s;
+  flex: 0 0 auto;
+  width: 45%;
+  scroll-snap-align: start;
+}
+.slide > .column {
+  margin-right: 0;
 }
 .column{
     margin-right: 32px;
@@ -202,7 +209,7 @@ background-color: var(--background);
         gap: 16px;
     }
 .slide{
-    width: 100%;
+    width: 70%;
 }
 }
 
@@ -220,6 +227,14 @@ background-color: var(--background);
 
 .hero-wrap{
     padding: 32px 0 120px;
+}
+
+/* Hide slider arrows on mobile - swipe with your thumb instead */
+.arrows{
+    display: none;
+}
+.slide{
+    width: 82%;
 }
 
 }
@@ -258,8 +273,8 @@ height: 360px;
 }
 
 /* SLIDER */
-.slider {
-  height: 34em;
+.slide {
+  width: 88%;
 }
 
 }
