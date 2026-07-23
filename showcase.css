@@ -85,7 +85,7 @@ z-index: 1;
 .close-modal {
   position: absolute;
   top: 8px;
-  right: 16px;
+  right: 24px;
   font-size: 2rem;
   color: #333;
   cursor: pointer;
